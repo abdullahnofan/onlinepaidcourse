@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>دورة عبدلله نوفان الحصرية ٢٠٢٦</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --cream: #F5F0E8; --ivory: #FDFAF4; --beige: #E8DCC8; --warm-beige: #D4C4A8; --gold: #B8996A; --dark-gold: #8B6F47; --text-dark: #2C2416; --text-medium: #5C4A2A; --text-light: #8B7355; --white: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--ivory); color: var(--text-dark); direction: rtl; text-align: right; }
+        nav { background: var(--white); border-bottom: 1px solid var(--beige); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--dark-gold); letter-spacing: 1px; }
+        .nav-logo span { display: block; font-family: 'Tajawal', sans-serif; font-size: 10px; color: var(--text-light); letter-spacing: 3px; }
+        .nav-cta { background: var(--dark-gold); color: var(--white); padding: 10px 20px; border: none; font-family: 'Tajawal', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; letter-spacing: 1px; }
+        .hero { background: var(--cream); padding: 60px 24px 50px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+        .hero-eyebrow { font-size: 11px; letter-spacing: 2px; color: var(--gold); margin-bottom: 20px; font-weight: 500; line-height: 1.8; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--text-dark); line-height: 1.5; margin-bottom: 10px; }
+        .hero-subtitle { font-size: 15px; color: var(--text-medium); line-height: 1.8; margin: 18px auto; max-width: 320px; font-weight: 300; }
+        .hero-divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 24px 0; }
+        .hero-divider hr { width: 50px; border: none; border-top: 1px solid var(--warm-beige); }
+        .hero-divider span { color: var(--gold); font-size: 16px; }
+        .hero-price-tag { display: inline-block; background: var(--white); border: 1px solid var(--beige); padding: 14px 32px; margin-bottom: 20px; }
+        .price-label { font-size: 10px; letter-spacing: 3px; color: var(--text-light); display: block; margin-bottom: 4px; }
+        .price-amount { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--dark-gold); }
+        .hero-btn { display: block; width: 100%; max-width: 300px; margin: 0 auto; padding: 16px; background: var(--dark-gold); color: var(--white); font-family: 'Tajawal', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 2px; border: none; cursor: pointer; text-decoration: none; text-align: center; }
+        .section-header { text-align: center; padding: 40px 24px 20px; background: var(--white); }
+        .section-eyebrow { font-size: 10px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text-dark); line-height: 1.4; }
+        .section-line { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; }
+        .section-line hr { width: 40px; border: none; border-top: 1px solid var(--warm-beige); }
+        .section-line .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); }
+        .curriculum { background: var(--white); padding: 8px 24px 40px; }
+        .module-card { background: var(--ivory); border: 1px solid var(--beige); padding: 20px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 14px; }
+        .module-num { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--warm-beige); flex-shrink: 0; line-height: 1; min-width: 30px; }
+        .module-content h4 { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; line-height: 1.5; }
+        .module-tag { display: inline-block; background: var(--cream); border: 1px solid var(--beige); padding: 2px 8px; font-size: 10px; color: var(--gold); letter-spacing: 1px; margin-top: 8px; }
+        .testimonials { background: var(--cream); padding: 40px 24px; }
+        .testimonial-card { background: var(--white); border: 1px solid var(--beige); padding: 24px 20px; margin-bottom: 16px; }
+        .testimonial-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 12px; }
+        .testimonial-text { font-size: 14px; color: var(--text-medium); line-height: 1.8; font-style: italic; margin-bottom: 16px; }
+        .testimonial-text::before { content: 'C'; font-family: 'Playfair Display', serif; font-size: 36px; color: var(--beige); line-height: 0; vertical-align: -12px; margin-left: 4px; }
+        .testimonial-author { display: flex; align-items: center; gap: 10px; }
+        .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--beige); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .author-name { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+        .author-title { font-size: 11px; color: var(--text-light); }
+        .final-cta { background: var(--text-dark); padding: 50px 24px; text-align: center; }
+        .final-cta .eyebrow { font-size: 10px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+        .final-cta h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--ivory); line-height: 1.4; margin-bottom: 16px; }
+        .final-cta p { font-size: 14px; color: var(--text-light); line-height: 1.8; margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto; }
+        .final-cta .cta-price { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--gold); display: block; margin-bottom: 8px; }
+        .final-cta .old-price { font-size: 14px; color: var(--text-light); text-decoration: line-through; margin-bottom: 24px; display: block; }
+        .final-btn { display: block; width: 100%; max-width: 300px; margin: 0 auto 12px; padding: 18px; background: var(--gold); color: var(--text-dark); font-family: 'Tajawal', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; border: none; cursor: pointer; text-decoration: none; text-align: center; }
+        .guarantee { font-size: 11px; color: var(--text-light); letter-spacing: 1px; margin-top: 16px; }
+        footer { background: var(--white); padding: 24px; text-align: center; border-top: 1px solid var(--beige); }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--dark-gold); margin-bottom: 8px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin: 12px 0; }
+        .footer-links a { font-size: 12px; color: var(--text-light); text-decoration: none; letter-spacing: 1px; }
+        footer p { font-size: 11px; color: var(--text-light); margin-top: 8px; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero h1, .hero-subtitle, .hero-btn { animation: fadeUp 0.8s ease forwards; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-logo">عبدلله نوفان<span>دورة عبدلله نوفان الحصرية ٢٠٢٦</span></div>
+    <button class="nav-cta">متبقي مقعدين ٢ فقط ✦</button>
+</nav>
+
+<section class="hero">
+    <p class="hero-eyebrow">دورة حصرية يقدمها مطور وكاشف الثغرات الرسمي بالشرق الأوسط السيد عبدلله نوفان</p>
+    <h1>أتقن مهارات مطورين وكاشفين الثغرات لدى شركة انستقرام لبناء مصدر دخل إضافي جديد!</h1>
+    <div class="hero-divider"><hr><span>◆</span><hr></div>
+    <p class="hero-subtitle">استثمر في نفسك ، المقاعد محدودة لـ ٧ أشخاص فقط</p>
+    <div class="hero-price-tag">
+        <span class="price-label">سعر الدورة</span>
+        <div class="price-amount">225 JOD</div>
+    </div>
+    <a href="https://buy.stripe.com/fZu3cvbwb9xa5cA5t40481s" target="_blank" class="hero-btn">اشتري الدورة الآن</a>
+</section>
+
+<div class="section-header">
+    <p class="section-eyebrow">المحتوى التعليمي</p>
+    <h2 class="section-title">ماذا ستتعلم؟</h2>
+    <div class="section-line"><hr><div class="diamond"></div><hr></div>
+</div>
+<section class="curriculum">
+    <div class="module-card"><span class="module-num">١</span><div class="module-content"><h4>استرجاع كافة الحسابات المخترقة والمسروقة والمغلوقة</h4><span class="module-tag">RECOVERY</span></div></div>
+    <div class="module-card"><span class="module-num">٢</span><div class="module-content"><h4>أنواع الثغرات الأمنية</h4><span class="module-tag">CORE SKILLS</span></div></div>
+    <div class="module-card"><span class="module-num">٣</span><div class="module-content"><h4>منصات Bug Bounty</h4><span class="module-tag">PLATFORMS</span></div></div>
+    <div class="module-card"><span class="module-num">٤</span><div class="module-content"><h4>تعلم الخوارزميات للحصول على أكبر قدر من المشاهدات على المحتوى لجذب عملاء ومؤثرين لبيع مهارتك</h4><span class="module-tag">GROWTH</span></div></div>
+</section>
+
+<div class="section-header" style="background: var(--cream);">
+    <p class="section-eyebrow">آراء الطلاب السابقين</p>
+    <h2 class="section-title">ماذا قالوا عنّا؟</h2>
+    <div class="section-line"><hr><div class="diamond"></div><hr></div>
+</div>
+<section class="testimonials">
+    <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">والله استحق كل فلس، رجعت حسابي اللي كان مسروق من سنتين وما صدقت! عبدلله شرح بطريقة بسيطة وعملية.</p>
+        <div class="testimonial-author"><div class="author-avatar">👤</div><div><div class="author-name">محمد العبادي</div><div class="author-title">عمّان، الأردن</div></div></div>
+    </div>
+    <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">ما توقعت إنه رح يفرق معي هيك، بس فعلاً الدورة غيّرت طريقة تفكيري بالتعامل مع التقنية. نصحت فيها كل صاحباتي.</p>
+        <div class="testimonial-author"><div class="author-avatar">👤</div><div><div class="author-name">رنا الخطيب</div><div class="author-title">إربد، الأردن</div></div></div>
+    </div>
+    <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">جد أفضل استثمار عملته بحياتي، بعد الدورة صرت أحصل على عملاء من انستقرام بشكل منتظم. مشكور يا عبدلله.</p>
+        <div class="testimonial-author"><div class="author-avatar">👤</div><div><div class="author-name">أنس الزعبي</div><div class="author-title">الزرقاء، الأردن</div></div></div>
+    </div>
+    <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">كنت خايفة أشتري بس الحمدلله جربت، المحتوى واضح ومرتب ومحترم. استرجعت حسابي وتعلمت أشياء ما كنت أعرفها أصلاً.</p>
+        <div class="testimonial-author"><div class="author-avatar">👤</div><div><div class="author-name">سارة الدباس</div><div class="author-title">عمّان، الأردن</div></div></div>
+    </div>
+    <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">أخوي الصغير اشترك معي وكلانا استفدنا، المعلومات حديثة وعملية مش نظريات فاضية. عبدلله يعطيك العافية.</p>
+        <div class="testimonial-author"><div class="author-avatar">👤</div><div><div class="author-name">خالد النسور</div><div class="author-title">عجلون، الأردن</div></div></div>
+    </div>
+    <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">من أحسن القرارات اللي اتخذتها، الدورة مليانة معلومات نادرة ما تلاقيها بأي مكان ثاني. والسعر منيح مقارنة بالقيمة.</p>
+        <div class="testimonial-author"><div class="author-avatar">👤</div><div><div class="author-name">ليلى المومني</div><div class="author-title">السلط، الأردن</div></div></div>
+    </div>
+    <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">والله ما ندمت لحظة، بعد ما أنهيت الدورة صارت عندي ثقة بنفسي بالمجال. أنصح فيها كل واحد بده يتطور.</p>
+        <div class="testimonial-author"><div class="author-avatar">👤</div><div><div class="author-name">عمر الطراونة</div><div class="author-title">الكرك، الأردن</div></div></div>
+    </div>
+</section>
+
+<section class="final-cta">
+    <p class="eyebrow">✦ العرض محدود ✦</p>
+    <h2>انضم اليوم<br>وابدأ رحلتك</h2>
+    <p>سعر الإطلاق متاح لفترة محدودة فقط — لا تفوّت الفرصة</p>
+    <span class="cta-price">225 JOD</span>
+    <span class="old-price">350 JOD</span>
+    <a href="https://buy.stripe.com/fZu3cvbwb9xa5cA5t40481s" target="_blank" class="final-btn">اشتري الدورة الآن</a>
+    <p class="guarantee">✦ ضمان استرداد المبلغ خلال ٣٠ يوماً ✦</p>
+</section>
+
+<footer>
+    <div class="footer-logo">عبدلله نوفان</div>
+    <div class="footer-links">
+        <a href="#">الخصوصية</a>
+        <a href="#">الشروط</a>
+        <a href="https://wa.me/447537175422" target="_blank">تواصل معنا</a>
+    </div>
+    <p>© 2026 دورة عبدلله نوفان الحصرية · جميع الحقوق محفوظة</p>
+</footer>
+
+</body>
+</html>
